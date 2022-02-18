@@ -11,7 +11,7 @@
         <li> {{ $train->train_id}} </li>
         <li>From: {{ $train->departure_station}}</li>
         <li>To: {{ $train->arrival_station}}</li>
-        <li>Departure Time: {{ $train->departure_time}}</li>
+        <li>Departure Time: {{$train->departure_date}} {{ $train->departure_time}}</li>
         <li>Arrival Time: {{ $train->arrival_time}}</li>
         <li>
             @if ($train->on_time == false)
