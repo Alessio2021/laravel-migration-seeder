@@ -12,6 +12,8 @@ class Train extends Model
         'arrival_station',
         'departure_time',
         'arrival_time',
+        'departure_date',
+        'arrival_date',
         'train_id',
         'wagons',
         'on_time',
