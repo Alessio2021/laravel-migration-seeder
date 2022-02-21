@@ -9,7 +9,7 @@ class TrainController extends Controller
 {
     public function index() 
     {
-        $trains = Train::where('departure_date', '>=', Carbon::today())->get();
+        $trains = Train::paginate(15);
         $data = ['trains' => $trains];
         return view('home', $data);
     }
@@ -29,6 +29,10 @@ class TrainController extends Controller
         //     'canceled' => 0,
         // ]);
         // $train->save();
+    }
+    public function show(Train $train)
+    {
+        return view('show', compact('train'));
     }
 }
 

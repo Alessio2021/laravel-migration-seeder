@@ -1,14 +1,12 @@
 @extends('layouts.base')
 
 @section('documentTitle')
-    Train Time
+    Train - info
 @endsection
 
 @section('content')
-<div class="rowcontainer-fluid bg-info">
-    <div class="col">
-    <div class="d-flex text-light flex-wrap justify-content-center">
-        @foreach ($trains as $train)
+<div class="row">
+    <div class="col container d-flex justify-content-center">
         <ul class="card w-25 bg-warning m-2 p-4 shadow-lg list-group">
             <li class="list-group-item"> {{ $train->society}} </li>
             <li class="list-group-item"> {{ $train->train_id}} </li>
@@ -29,16 +27,13 @@
                 <strong>Canceled.</strong>
             </li>
             @endif
-            <li class="list-group-item text-center">
-                <a href="{{ route('show', $train->id) }}" class="btn btn-primary">Gotta Catch 'Em All!</a>
-            </li>
         </ul>
-        @endforeach
     </div>
 </div>
-    <div class="container-fluid bg-info row">
-        <div class="col d-flex justify-content-center pt-4">
-            {{$trains->links()}}
-        </div>
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <a href="{{ route('home') }}" class="btn btn-primary">Go Back</a>
     </div>
+</div>
+
 @endsection
